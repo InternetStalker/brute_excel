@@ -1,9 +1,27 @@
 import itertools
+import typing
 from string import digits, punctuation, ascii_letters
 import win32com.client as client
 from datetime import datetime
 import time
 
+class Lenght(typing.NamedTuple):
+    min: int
+    max: int
+
+class Password:
+    def __init__(
+        self,
+        length: int | None = None,
+        nums: bool | None = None, 
+        lower_letters: bool | None = None,
+        upper_letters: bool | None = None,
+        special_syms: bool | None = None
+    ) -> None:
+        self._lenght = self._get_lenght(lenght)
+
+    def _get_lenght(self, lenght: int | None) -> Lenght:
+        pass
 
 def brute_excel_doc():
     print("***Hello friend!***")
